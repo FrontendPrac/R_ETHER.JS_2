@@ -1,14 +1,19 @@
 const { ethers } = require("ethers");
 
-const INFURA_ID = ''
-const provider = new ethers.providers.JsonRpcProvider(`https://mainnet.infura.io/v3/${INFURA_ID}`)
+const INFURA_ID = "06d0055e182144e687e8b9c62acb44c3";
+// JsonRPC 통신하기
+const provider = new ethers.providers.JsonRpcProvider(
+  `https://mainnet.infura.io/v3/${INFURA_ID}`
+);
 
-const address = '0x73BCEb1Cd57C711feaC4224D062b0F6ff338501e'
+const address = "0x528B15DF3507985965D9ceCF5B76551D5b6c0e0e";
 
+// 잔액 확인하기
 const main = async () => {
-    const balance = await provider.getBalance(address)
-    console.log(`\nETH Balance of ${address} --> ${ethers.utils.formatEther(balance)} ETH\n`)
-}
+  const balance = await provider.getBalance(address);
+  console.log(
+    `\nETH Balance of ${address} --> ${ethers.utils.formatEther(balance)} ETH\n`
+  );
+};
 
-main()
-
+main();
